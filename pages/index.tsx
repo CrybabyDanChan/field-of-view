@@ -1,7 +1,3 @@
-import React, {FC} from 'react';
-
-const Home: FC = () => {
-  return <div>Hello</div>;
-};
+import Home from '@/containers/home';
 
 export default Home;
