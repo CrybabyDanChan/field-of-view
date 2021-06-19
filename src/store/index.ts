@@ -1,7 +1,19 @@
-import {createStore, Store} from 'redux';
+import {
+  applyMiddleware,
+  createStore,
+  Middleware,
+  Store,
+} from 'redux';
 import {createWrapper, Context} from 'next-redux-wrapper';
-import rootReducer, {State} from './reducer';
+import {rootReducer} from './rootReducer';
+import createSagaMiddleware from 'redux-saga';
+import {rootSaga} from '@/store/rootSaga';
 
-const makeStore = (context: Context): Store => createStore(rootReducer);
+const sagaMiddleware = createSagaMiddleware();
+const middleware: Middleware[] = [sagaMiddleware];
+const makeStore = (context: Context): Store => createStore(
+    rootReducer,
+    applyMiddleware(...middleware),
+);
 
-export const wrapper = createWrapper<Store<State>>(makeStore);
+export const wrapper = createWrapper<Store<any>>(makeStore);

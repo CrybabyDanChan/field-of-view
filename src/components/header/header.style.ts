@@ -10,21 +10,15 @@ const HeaderWrapper = styled.div`
       align-items: center;
       grid-auto-flow: column;
       
-      &__item {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 64px;
-        line-height: 75px;
-        color: #2B3172;
-      }
-      
-      &__link {
-        cursor: pointer;
-      }
-      
-      &__img {
-        width: 337.75px;
-        height: 134.71px;
+      &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 15px;
+        
+        a {
+          text-decoration: none;
+        }
       }
     }
 `;

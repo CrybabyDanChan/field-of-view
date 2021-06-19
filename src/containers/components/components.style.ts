@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const CompletedWrapper = styled.div`
-    .completed {
+const ComponentsWrapper = styled.div`
+    .components {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -17,4 +17,4 @@ const CompletedWrapper = styled.div`
     }
 `;
 
-export default CompletedWrapper;
+export default ComponentsWrapper;

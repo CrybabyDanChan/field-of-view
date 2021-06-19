@@ -6,7 +6,7 @@ import React, {
 import {connect} from 'react-redux';
 
 import ResultWrapper from '@/containers/result/result.style';
-import {State} from '@/store/reducer';
+import {State} from '@/store/rootReducer';
 import {useRouter} from 'next/router';
 
 type ResultProps = {

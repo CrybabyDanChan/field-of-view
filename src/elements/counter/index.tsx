@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import CounterWrapper from './counter.style';
-import Button from '@/components/button';
+import Button from '@/elements/button';
 
 interface CounterProps extends InputHTMLAttributes<HTMLInputElement> {
     value: number;
@@ -23,7 +23,6 @@ const Counter: FC<CounterProps> = (props: CounterProps) => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const {target: {value}} = e;
-    console.log(value)
 
     handleCounter(+value);
   };

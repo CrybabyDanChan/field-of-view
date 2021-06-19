@@ -16,9 +16,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head >
+          <title>Field Of View</title>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
-          <title>Field Of View</title>
         </Head>
         <body>
           <Main />
