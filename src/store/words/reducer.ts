@@ -1,4 +1,4 @@
-import {HomeActionTypes} from './types';
+import {WordsActionTypes} from './types';
 
 export interface HomeState {
 
@@ -8,9 +8,9 @@ const initState: HomeState = {
 
 };
 
-const homeReducer = (
+const wordsReducer = (
     state = initState,
-    action: HomeActionTypes,
+    action: WordsActionTypes,
 ): HomeState => {
   switch (action.type) {
     default:
@@ -18,4 +18,4 @@ const homeReducer = (
   }
 };
 
-export default homeReducer;
+export default wordsReducer;

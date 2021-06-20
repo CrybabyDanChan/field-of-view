@@ -7,10 +7,11 @@ import React, {
 import CounterWrapper from './counter.style';
 import Button from '@/elements/button';
 
-interface CounterProps extends InputHTMLAttributes<HTMLInputElement> {
+type CounterProps = {
     value: number;
     step: number;
-    handleCounter: (value: number) => void
+    handleCounter: (value: number) => void,
+    extends: InputHTMLAttributes<HTMLInputElement>
 }
 
 const Counter: FC<CounterProps> = (props: CounterProps) => {

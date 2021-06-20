@@ -1,13 +1,18 @@
-import React, {ButtonHTMLAttributes, FC, ReactNode} from 'react';
+import React, {
+  ButtonHTMLAttributes,
+  FC,
+  ReactElement,
+  ReactNode,
+} from 'react';
 
 import ButtonWrapper from './button.style';
 
 type ButtonProps = {
     children: ReactNode;
-    extends?: ButtonHTMLAttributes<HTMLButtonElement>;
+    extends?: ButtonHTMLAttributes<HTMLButtonElement>; // HTMLAttributes
 }
 
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
+const Button: FC<ButtonProps> = (props: ButtonProps): ReactElement => {
   const {
     children,
     ...other

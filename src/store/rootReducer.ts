@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import homeReducer from '@/store/home/reducer';
+import wordsReducer from '@/store/words/reducer';
 
 export const rootReducer = combineReducers(
-    homeReducer,
+    wordsReducer,
 );
 
 export type AppState = ReturnType<typeof rootReducer>
