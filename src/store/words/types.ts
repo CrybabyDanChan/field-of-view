@@ -25,7 +25,13 @@ export type WordsSetFetchingErrorAction = {
     payload: ErrorHttpAction
 }
 
+export const WORDS_FETCH_ASYNC = 'WORDS_FETCH_ASYNC';
+export type WordsFetchAsyncAction = {
+    type: typeof WORDS_FETCH_ASYNC,
+}
+
 export type WordsActionTypes = WordsStartFetchingAction
     | WordsStopFetchingAction
     | WordsSetFetchingErrorAction
     | WordsFillAction
+    | WordsFetchAsyncAction

@@ -7,8 +7,23 @@ import React, {
 
 import ButtonWrapper from './button.style';
 
+const styles = {
+  primary: {
+    color: 'white',
+  },
+
+  dangerous: {
+    colore: 'red',
+  },
+};
+
+type Styles = typeof styles;
+
+type ButtonType = keyof Styles;
+
 type ButtonProps = {
     children: ReactNode;
+    styleType?: ButtonType;
     extends?: ButtonHTMLAttributes<HTMLButtonElement>; // HTMLAttributes
 }
 

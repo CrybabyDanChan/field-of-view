@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 
 type HeaderProps = {
-	children: ReactNode
+  children: ReactNode
 }
 export default HeaderProps;

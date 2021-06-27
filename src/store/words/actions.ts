@@ -1,12 +1,14 @@
 import {
+  ErrorHttpAction,
+  WORDS_FETCH_ASYNC,
   WORDS_FILL,
   WORDS_SET_FETCHING_ERROR,
   WORDS_START_FETCHING,
   WORDS_STOP_FETCHING,
   WordsActionTypes,
+  WordsFetchAsyncAction,
   WordsFillAction,
   WordsSetFetchingErrorAction,
-  ErrorHttpAction,
 } from '@/store/words/types';
 
 export function wordsStartFetching(): WordsActionTypes {
@@ -33,5 +35,11 @@ export function setFetchingError(payload: ErrorHttpAction): WordsSetFetchingErro
     type: WORDS_SET_FETCHING_ERROR,
     error: true,
     payload,
+  };
+}
+
+export function wordsFetchAsync(): WordsFetchAsyncAction {
+  return {
+    type: WORDS_FETCH_ASYNC,
   };
 }

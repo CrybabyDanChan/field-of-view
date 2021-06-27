@@ -16,4 +16,6 @@ const makeStore = (context: Context): Store => createStore(
     applyMiddleware(...middleware),
 );
 
+// sagaMiddleware.run(rootSaga);
+
 export const wrapper = createWrapper<Store<any>>(makeStore);
