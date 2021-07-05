@@ -13,7 +13,7 @@ const styles = {
   },
 
   dangerous: {
-    colore: 'red',
+    color: 'red',
   },
 };
 
