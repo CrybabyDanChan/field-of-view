@@ -6,7 +6,7 @@ import React, {
 import {connect} from 'react-redux';
 
 import ResultWrapper from '@/containers/result/result.style';
-import {State} from '@/store/rootReducer';
+import {AppState} from '@/store/rootReducer';
 import {useRouter} from 'next/router';
 
 type ResultProps = {
@@ -82,7 +82,7 @@ const Result: FC<ResultProps> = (props: ResultProps) => {
   </ResultWrapper>;
 };
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: AppState & any) => {
   const {
     words,
     numberWords,

@@ -25,11 +25,13 @@ type ButtonProps = {
     children: ReactNode;
     styleType?: ButtonType;
     extends?: ButtonHTMLAttributes<HTMLButtonElement>; // HTMLAttributes
+    onClick?: () => void
 }
 
 const Button: FC<ButtonProps> = (props: ButtonProps): ReactElement => {
   const {
     children,
+    onClick,
     ...other
   } = props;
 
@@ -37,6 +39,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps): ReactElement => {
     <button
       className="button"
       type="button"
+      onClick={onClick}
       {...other}
     >
       {children}
