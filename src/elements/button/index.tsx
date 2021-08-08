@@ -11,33 +11,35 @@ const styles = {
   primary: {
     color: 'white',
   },
-
   dangerous: {
     color: 'red',
   },
 };
 
-type Styles = typeof styles;
+export type Styles = typeof styles;
 
-type ButtonType = keyof Styles;
+export type ButtonType = keyof Styles;
 
-type ButtonProps = {
+export type ButtonProps = {
     children: ReactNode;
-    styleType?: ButtonType;
+    styleType: ButtonType;
     extends?: ButtonHTMLAttributes<HTMLButtonElement>; // HTMLAttributes
-    onClick?: () => void
+    onClick: () => void
 }
 
 const Button: FC<ButtonProps> = (props: ButtonProps): ReactElement => {
   const {
     children,
     onClick,
+    styleType,
     ...other
   } = props;
 
+  const className = `button ${styleType}`;
+
   return <ButtonWrapper>
     <button
-      className="button"
+      className={className}
       type="button"
       onClick={onClick}
       {...other}
@@ -45,6 +47,10 @@ const Button: FC<ButtonProps> = (props: ButtonProps): ReactElement => {
       {children}
     </button>
   </ButtonWrapper>;
+};
+
+Button.defaultProps = {
+  onClick: () => null,
 };
 
 export default Button;

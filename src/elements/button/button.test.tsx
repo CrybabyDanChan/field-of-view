@@ -1,15 +1,22 @@
 import React, {ReactElement} from 'react';
 import {shallow, render} from 'enzyme';
 import renderer from 'react-test-renderer';
-import Button from './index';
+import Button, {ButtonProps} from './index';
+import {expect} from '@jest/globals';
 
-const setUp = <P, >(props: P): ReactElement => <Button {...props}>Click</Button>;
+const buttonProps: ButtonProps = {
+  children: 'hello',
+  styleType: 'dangerous',
+  onClick: () => {},
+};
+
+const setUp = <P extends ButtonProps, >(props: P): ReactElement => <Button {...props}>Click</Button>;
 
 describe('component render enzyme', () => {
   let component: ReactElement;
 
   beforeEach(() => {
-    component = setUp({});
+    component = setUp(buttonProps);
   });
 
   it('Correctly shallow render', () => {
@@ -23,20 +30,35 @@ describe('component render enzyme', () => {
   });
 });
 
-describe('component render react-test', () => {
-  let component: ReactElement;
+// describe('component render react-test', () => {
+//   let component: ReactElement;
+//
+//   beforeEach(() => {
+//     component = setUp(buttonProps);
+//   });
+//
+//   it('Correctly render', () => {
+//     // Arrange
+//     const renderComponent = renderer.create(component);
+//     // Act
+//     const tree = renderComponent.toJSON();
+//     // Assert
+//     expect(tree).toMatchSnapshot();
+//   });
+// });
 
-  beforeEach(() => {
-    component = setUp({});
+describe('button props test', () => {
+  it('has props', () => {
+    const component = shallow(setUp(buttonProps));
+
+    expect(component.find('button').contains('hello'));
   });
 
-  it('Correctly render', () => {
-    // Arrange
-    const renderComponent = renderer.create(component);
-    // Act
-    const tree = renderComponent.toJSON();
-    // Assert
-    expect(tree).toMatchSnapshot();
+  it('default props', () => {
+    // @ts-ignore
+    const result = Button.defaultProps.onClick();
+
+    expect(result).toBe(null);
   });
 });
 
